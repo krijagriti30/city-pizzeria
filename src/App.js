@@ -11,6 +11,9 @@ import AddCart from "./pages/AddCart";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CartProvider } from "./helpers/CartContext";
+import CheckoutForm from "./pages/checkoutform";
+import OrderSuccess from './pages/OrderSuccess';
+
 
 function App() {
   return (
@@ -23,7 +26,12 @@ function App() {
           <Route path="/menu" exact component={Menu} />
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
-          <Route path="/cart" exact component={AddCart} /> {/* ✅ Add this line */}
+          <Route path="/cart" exact component={AddCart} />
+          <Route path="/checkout" exact component={CheckoutForm} />
+          <Route path="/order-success" element={<OrderSuccess />} />
+
+          
+           {/* ✅ Add this line */}
         </Switch>
         <Footer />
       </Router></CartProvider>
